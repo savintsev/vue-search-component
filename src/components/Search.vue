@@ -400,16 +400,16 @@ export default {
         --toggle-width: 40px;
         --toggle-height: 22px;
         --toggle-space: 2px;
-        --toggle-dot: calc(var(--toggle-height) - var(--toggle-space) * 2);
+        --toggle-dot: calc(var(--toggle-height, 22px) - var(--toggle-space, 2px) * 2);
 
         margin: 0;
 
         &__toggle {
             position: relative;
             display: inline-block;
-            width: var(--toggle-width);
-            height: var(--toggle-height);
-            border-radius: var(--toggle-height);
+            width: var(--toggle-width, 40px);
+            height: var(--toggle-height, 22px);
+            border-radius: var(--toggle-height, 22px);
             background: #5e9969;
             vertical-align: middle;
             margin: 0 14px;
@@ -434,8 +434,8 @@ export default {
                         }
 
                         &::after {
-                            right: var(--toggle-space);
-                            left: calc(var(--toggle-width) - var(--toggle-dot) - var(--toggle-space));
+                            right: var(--toggle-space, 2px);
+                            left: calc(var(--toggle-width, 40px) - var(--toggle-dot, 18px) - var(--toggle-space, 2px));
                         }
                     }
                 }
@@ -453,27 +453,27 @@ export default {
                 display: block;
                 width: 100%;
                 height: 100%;
-                border-radius: var(--toggle-height);
+                border-radius: var(--toggle-height, 22px);
                 transition: background 0.125s ease;
 
                 &::before,
                 &::after {
                     content: '';
                     position: absolute;
-                    top: var(--toggle-space);
-                    left: var(--toggle-space);
-                    height: var(--toggle-dot);
+                    top: var(--toggle-space, 2px);
+                    left: var(--toggle-space, 2px);
+                    height: var(--toggle-dot, 18px);
                     border-radius: inherit;
                     transition: all 0.2s ease;
                 }
 
                 &::before {
-                    width: calc(100% - var(--toggle-space) * 2);
+                    width: calc(100% - var(--toggle-space, 2px) * 2);
                     background: #5e9969;
                 }
 
                 &::after {
-                    right: calc(var(--toggle-width) - var(--toggle-dot) - var(--toggle-space));
+                    right: calc(var(--toggle-width, 40px) - var(--toggle-dot, 18px) - var(--toggle-space, 2px));
                     box-shadow: 0px 3px 3px 0px rgba(0, 1, 1, 0.3);
                     background: #fff;
                 }

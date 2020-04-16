@@ -34,6 +34,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.2.2",
+    "postcss-css-variables": "^0.14.0",
     "postcss-flexbugs-fixes": "^4.2.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
@@ -70,6 +71,7 @@
   },
   "postcss": {
     "plugins": {
+      "postcss-css-variables": {},
       "postcss-flexbugs-fixes": {},
       "postcss-preset-env": {},
       "autoprefixer": {}
