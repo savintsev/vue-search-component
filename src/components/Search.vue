@@ -1,5 +1,20 @@
 <template>
     <div class="search">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            aria-hidden="true"
+            style="position: absolute; width: 0; height: 0; overflow: hidden;"
+        >
+            <defs>
+                <symbol id="plus" viewBox="0 0 20 20">
+                    <path d="M10 1a9 9 0 11-9 9 9 9 0 019-9z" fill="none" stroke="#4f6882" stroke-width="2" />
+                    <path d="M14 11h-3v3a1 1 0 01-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 112 0v3h3a1 1 0 010 2z" fill="#506981" fill-rule="evenodd" />
+                </symbol>
+            </defs>
+        </svg>
+
         <form action="/" method="post" class="search__form" @submit.prevent="submitHandler">
             <div class="search__fields">
                 <div class="search-main">
@@ -97,33 +112,15 @@
 
                 <div class="search-switchers" v-if="!isByTitle">
                     <button type="button" class="search-switchers__button" :data-on="isWithPrice" @click="isWithPrice = !isWithPrice">
-                        <svg
-                            class="search-switchers__icon"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 20"
-                            aria-hidden="true"
-                            focusable="false"
-                        >
-                            <path d="M10 1a9 9 0 11-9 9 9 9 0 019-9z" fill="none" stroke="#4f6882" stroke-width="2" />
-                            <path d="M14 11h-3v3a1 1 0 01-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 112 0v3h3a1 1 0 010 2z" fill="#506981" fill-rule="evenodd" />
+                        <svg class="search-switchers__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" focusable="false">
+                            <use xlink:href="#plus"></use>
                         </svg>
                         <span class="search-switchers__text">Цена</span>
                     </button>
 
                     <button type="button" class="search-switchers__button" :data-on="isWithMeter" @click="isWithMeter = !isWithMeter">
-                        <svg
-                            class="search-switchers__icon"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 20"
-                            aria-hidden="true"
-                            focusable="false"
-                        >
-                            <path d="M10 1a9 9 0 11-9 9 9 9 0 019-9z" fill="none" stroke="#4f6882" stroke-width="2" />
-                            <path d="M14 11h-3v3a1 1 0 01-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 112 0v3h3a1 1 0 010 2z" fill="#506981" fill-rule="evenodd" />
+                        <svg class="search-switchers__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" focusable="false">
+                            <use xlink:href="#plus"></use>
                         </svg>
                         <span class="search-switchers__text">Метраж</span>
                     </button>
